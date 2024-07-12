@@ -4,12 +4,16 @@ import { Button } from "../../components/button"
 
 interface ConfirmTripModalProps {
   closeConfirmTripModal: () => void
+  setOwnerName: (name: string) => void
+  setOwnerEmail: (email: string) => void
   createTrip: (event: FormEvent<HTMLFormElement>) => void
 }
 
 export function ConfirmTripModal({
   closeConfirmTripModal,
   createTrip,
+  setOwnerName,
+  setOwnerEmail,
 }: ConfirmTripModalProps) {
   return (
     <div className='fixed inset-0 bg-black/60 flex items-center justify-center'>
@@ -22,7 +26,7 @@ export function ConfirmTripModal({
             </button>
           </div>
           <p className='text-sm text-zinc-400'>
-          Para concluir a criação da viagem para <span className='font-semibold text-zinc-100'>Florianópolis, Brasil</span> nas datas de <span className='font-semibold text-zinc-100'>16 a 27 de Agosto de 2024</span> preencha seus dados abaixo:
+            Para concluir a criação da viagem para <span className='font-semibold text-zinc-100'>Florianópolis, Brasil</span> nas datas de <span className='font-semibold text-zinc-100'>16 a 27 de Agosto de 2024</span> preencha seus dados abaixo:
           </p>
         </div>
 
@@ -34,6 +38,7 @@ export function ConfirmTripModal({
               name='name'
               placeholder='Seu nome completo'
               className='bg-transparent text-lg placeholder-zinc-400 outline-none flex-1'
+              onChange={event => setOwnerName(event.target.value)}
             />
           </div>
 
@@ -44,6 +49,7 @@ export function ConfirmTripModal({
               name='email'
               placeholder='Seu email pessoal'
               className='bg-transparent text-lg placeholder-zinc-400 outline-none flex-1'
+              onChange={event => setOwnerEmail(event.target.value)}
             />
           </div>
           

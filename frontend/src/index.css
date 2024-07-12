@@ -9,3 +9,37 @@
 input {
   color-scheme: dark;
 }
+
+/* edita as células selecionadas */
+.rdp-button[aria-selected="true"] {
+  background: #BEF264; /* lime-300 */
+  color: #1A2E05; /* lime-950 */
+  
+  &.rdp-button[aria-selected="true"]:hover {
+    background: #1A2E05; /* lime-950 */
+    color: #FAFAFA; /* zinc-50 */
+    border: #BEF264 0.1875rem solid; /* lime-300 */
+  }
+}
+
+/* edita as células NÃO selecionadas */
+.rdp-button:not(.rdp-button[aria-selected="true"]),
+.rdp-button:not([aria-label=""]) {
+  
+  &:hover {
+  background: #3F3F46; /* zinc-700 */
+  color: #FAFAFA; /* zinc-50 */
+  }
+
+  &:active {
+    background: #1A2E05; /* lime-950 */
+    color: #FAFAFA; /* zinc-50 */
+    border: #BEF264 0.1875rem solid; /* lime-300 */
+  }
+
+  &:focus-visible {
+    outline-color: #BEF264; /* lime-300 */
+    border-color: #BEF264; /* lime-300 */
+    background: #09090B; /* zinc-950 */
+  }
+}
